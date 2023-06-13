@@ -5,6 +5,7 @@ import { Repository,Equal } from 'typeorm';
 import { UpdateCrudDto } from './dto/update.dto';
 import { CreateCrudDto } from './dto/create.dto';
 
+//This service file is used to write all buisness logic for CRUD
 @Injectable()
 export class CrudService {
 
