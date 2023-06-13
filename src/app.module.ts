@@ -3,6 +3,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { CrudService } from './crud/crud.service';
 import { CrudController } from './crud/crud.controller';
 import { CrudModule } from './crud/crud.module';
+import { AuthModule } from './auth/auth.module';
+import { AuthController } from './auth/auth.controller';
+import { ProfileModule } from './profile/profile.module';
 
 @Module({
   imports: [
@@ -18,8 +21,10 @@ import { CrudModule } from './crud/crud.module';
       "entities": ["dist/**/*.entity{.ts,.js}"],
       "migrations": ["dist/migrations/*{.ts,.js}"],
   }),
-    CrudModule
+    CrudModule,
+    AuthModule,
+    ProfileModule
   ],
-  controllers: [CrudController],
+  // controllers: [CrudController, AuthController],
 })
 export class AppModule {}

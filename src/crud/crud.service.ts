@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { Crud } from './entity/crud.entity';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { Repository,Equal } from 'typeorm';
 import { UpdateCrudDto } from './dto/update.dto';
 import { CreateCrudDto } from './dto/create.dto';
 
@@ -50,6 +50,11 @@ export class CrudService {
         return 'Deleted!';
     }
       
-
+    async findByEmail(email: string): Promise<Crud> {
+        return this.crudRepo.createQueryBuilder('crud')
+          .where('crud.email = :email', { email })
+          .getOne();
+      }
+      
 
 }

@@ -15,4 +15,7 @@ export class Crud{
 
     @Column()
     email:String;
+
+    @Column()
+    password:String;
 }
