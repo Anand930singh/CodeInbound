@@ -15,6 +15,11 @@ export class CrudController {
         return this.crudService.get();
     }
 
+    @Get()
+    findByEmail(email:string):Promise<Crud>{
+        return this.findByEmail(email)
+    }
+
     // Create a new Crud item
     @Post()
     create(@Body() data: CreateCrudDto): Promise<Crud> {

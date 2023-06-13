@@ -14,4 +14,7 @@ export class CreateCrudDto {
 
   @IsEmail()
   email:String;
+
+  @IsString()
+  password:String;
 }

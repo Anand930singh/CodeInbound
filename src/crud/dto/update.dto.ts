@@ -1,8 +1,6 @@
 import { IsDecimal, IsEmail, IsNumber, IsString } from 'class-validator';
 
 export class UpdateCrudDto {
-  @IsNumber()
-  id: number;
 
   @IsString()
   firstName:String;
@@ -12,4 +10,7 @@ export class UpdateCrudDto {
 
   @IsEmail()
   email:String;
+  
+  @IsString()
+  password:String;
 }
